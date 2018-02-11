@@ -1,2 +1,4 @@
-/build-ZIRKSiS_LR_1-Desktop_Qt_5_10_1_GCC_64bit-Debug
-/build-ZIRKSiS_LR_1-Desktop_Qt_5_10_1_GCC_64bit-Release
+/*-Debug
+/*-Release
+*.pro
+*.pro.user

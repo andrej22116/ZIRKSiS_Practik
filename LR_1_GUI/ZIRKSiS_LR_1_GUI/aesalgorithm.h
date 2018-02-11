@@ -18,7 +18,6 @@ public:
     ~AESAlgorithm();
 
     bool setHexKey(std::string key, unsigned int keyLenth = 128);
-    void generateVector();
 
     std::string encrypt(std::string string);
     std::string decrypt(std::string string);
