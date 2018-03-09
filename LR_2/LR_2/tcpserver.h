@@ -18,9 +18,9 @@ public:
     TcpServer(unsigned short port) : Server(port){}
     ~TcpServer();
 
-    virtual bool initialize() final;
-    virtual void start() final;
-    virtual void stop() final;
+    virtual bool initialize() override;
+    virtual void start() override;
+    virtual void stop() override;
 
 protected:
     virtual void onConnect(std::shared_ptr<Connect<TCP>> connect) = 0;

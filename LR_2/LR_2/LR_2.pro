@@ -6,7 +6,9 @@ CONFIG -= qt
 SOURCES += main.cpp \
     tcpserver.cpp \
     log.cpp \
-    mytcpserver.cpp
+    mytcpserver.cpp \
+    tcpclient.cpp \
+    mytcpclient.cpp
 
 HEADERS += \
     server.h \
@@ -15,7 +17,10 @@ HEADERS += \
     log.h \
     connect.h \
     mytcpserver.h \
-    socket.h
+    socket.h \
+    client.h \
+    tcpclient.h \
+    mytcpclient.h
 
 
 LIBS += -pthread

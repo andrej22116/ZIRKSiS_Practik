@@ -9,7 +9,7 @@ class Server
 protected:
     Socket _socket;
     unsigned short _port;
-    struct sockaddr_in _addres;
+    sockaddr_in _addres;
 
 public:
     Server(unsigned short port) : _port(port) {}

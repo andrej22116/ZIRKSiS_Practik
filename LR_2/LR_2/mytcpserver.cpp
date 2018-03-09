@@ -7,7 +7,6 @@ void MyTcpServer::onConnect(std::shared_ptr<Connect<TCP>> connect)
     {
         auto[bts, msg] = connect->revc();
         Log::Message("MyServer", "Bits: " + std::to_string(bts) + ", Msg: \"" + msg + "\"");
-        //std::cout << "[MyServer][LOG]#> Bits: " << bts << ", Msg: \"" << msg << "\"" << std::endl;
         if (msg == "shootdown")
         {
             std::thread([&](){ this->stop(); });
