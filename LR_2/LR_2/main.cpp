@@ -14,12 +14,13 @@ int main()
     if (program == "server")
     {
         Log::Message("PROGRAMM", "Start server!");
-        MyTcpServer server(25565);
+        MyTcpServer server(25565, "123640");
         if (!server.initialize())
         {
             Log::Error("PROGRAMM", "Problem in initialize server!");
             return -1;
         }
+        server.setIpLockTime(60);
         server.start();
     }
     else if (program == "client")

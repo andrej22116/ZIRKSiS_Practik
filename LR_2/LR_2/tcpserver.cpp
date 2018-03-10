@@ -41,17 +41,13 @@ void TcpServer::start()
         if (connect == nullptr) {
             break;
         }
-        _threads.push_back(std::make_shared<std::thread>(&TcpServer::onConnect, this, connect));
+       _threads.push_back(std::make_shared<std::thread>(&TcpServer::onConnect, this, connect));
     }
 }
 
 void TcpServer::stop()
 {
     _socket.close();
-    for (auto&& thread : _threads)
-    {
-        thread->join();
-    }
 }
 
 

@@ -18,8 +18,8 @@ class Connect
 private:
     Socket _socket;
 
-    std::string _port;
-    std::string _ipAddres;
+    std::string _stringPort;
+    std::string _stringIpAddres;
 
     sockaddr_in _addres;
 
@@ -38,13 +38,22 @@ public:
         _socket.close();
     }
 
-    const std::string& getIP()
+    const std::string& getStringIP()
     {
-        return _ipAddres;
+        return _stringIpAddres;
     }
-    const std::string& getPort()
+    const std::string& getStringPort()
     {
-        return _port;
+        return _stringPort;
+    }
+
+    unsigned int getIP()
+    {
+        return _addres.sin_addr.s_addr;
+    }
+    unsigned short getPort()
+    {
+        return _addres.sin_port;
     }
 
     int send(const std::string& msg)
@@ -91,11 +100,11 @@ public:
 private:
     void getIpAndPort()
     {
-        _port.resize(16);
-        _ipAddres.resize(32);
+        _stringPort.resize(16);
+        _stringIpAddres.resize(32);
 
-        _ipAddres = inet_ntoa(_addres.sin_addr);
-        _port = std::to_string(ntohs(_addres.sin_port));
+        _stringIpAddres = inet_ntoa(_addres.sin_addr);
+        _stringPort = std::to_string(ntohs(_addres.sin_port));
     }
 };
 
