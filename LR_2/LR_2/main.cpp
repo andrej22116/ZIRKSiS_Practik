@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 
 #include "mytcpserver.h"
@@ -41,3 +42,4 @@ int main()
     }
     return 0;
 }
+*/

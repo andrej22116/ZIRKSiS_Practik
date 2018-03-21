@@ -12,6 +12,8 @@ void Log::setColor(TextColor color)
         case Pink: { std::cout << "\x1B[35m"; } break;
         case White: { std::cout << "\x1B[37m"; } break;
         case DarkWhite: { std::cout << "\x1B[0m"; } break;
+    default:
+        break;
     }
 #endif
 }

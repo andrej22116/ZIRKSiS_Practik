@@ -9,7 +9,7 @@ void MyTcpServer::onConnect(std::shared_ptr<Connect<TCP>> connect)
     {
         Log::Warning("MyTcpServer", "This IP(" + connect->getStringIP() + ") is locked!");
 
-        auto timeNow = ::time(nullptr);
+        //auto timeNow = ::time(nullptr);
         *connect << "!"; // Сервер завершил обработку соединения.
         *connect >> clientMessage;
         *connect << "Your address has been blocked. Wait " + std::to_string(getBlockingTime(connect->getIP())) + "s.";
@@ -21,7 +21,7 @@ void MyTcpServer::onConnect(std::shared_ptr<Connect<TCP>> connect)
     }
 
     Log::Message("MyTcpServer", connect->getStringIP() + " - logs in");
-    bool invalidPassword = true;
+    //bool invalidPassword = true;
     for (int i = 0; i < 3; i++)
     {
         std::string userPassword;
@@ -33,7 +33,7 @@ void MyTcpServer::onConnect(std::shared_ptr<Connect<TCP>> connect)
             Log::Warning("MyTcpServer", connect->getStringIP() + " - Correct password!");
             *connect << "+";
 
-            invalidPassword = false;
+            //invalidPassword = false;
             break;
         }
 

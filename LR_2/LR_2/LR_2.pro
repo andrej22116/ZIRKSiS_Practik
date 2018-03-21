@@ -8,7 +8,10 @@ SOURCES += main.cpp \
     log.cpp \
     mytcpserver.cpp \
     tcpclient.cpp \
-    mytcpclient.cpp
+    mytcpclient.cpp \
+    trololo.cpp \
+    tlsconnect.cpp \
+    tlsserver.cpp
 
 HEADERS += \
     server.h \
@@ -20,7 +23,17 @@ HEADERS += \
     socket.h \
     client.h \
     tcpclient.h \
-    mytcpclient.h
+    mytcpclient.h \
+    tlsconnect.h \
+    sslclasses.h \
+    tlsserver.h
 
 
 LIBS += -pthread
+
+
+
+PKGCONFIG += openssl
+
+LIBS += -lcrypto
+LIBS += -lssl
