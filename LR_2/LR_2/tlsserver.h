@@ -2,9 +2,10 @@
 #define TLSSERVER_H
 
 #include <list>
+#include <memory>
 #include <thread>
 
-#include "sslclasses.h"
+#include "tlsconnect.h"
 
 class TlsServer
 {
@@ -15,13 +16,18 @@ private:
     unsigned short _port;
     sockaddr_in _addres;
 
+    SSLContext _sslContext;
+
 public:
-    TlsServer(unsigned short port) : _port(port) {}
+    TlsServer(unsigned short port);
+    ~TlsServer();
 
-    bool start();
+    void start();
 
-    virtual void onConnect() = 0;
+    virtual void onConnect(TLSConnect& connect) = 0;
 
+    void onConnectThread(std::shared_ptr<TLSConnect> connect);
 };
+
 
 #endif // TLSSERVER_H

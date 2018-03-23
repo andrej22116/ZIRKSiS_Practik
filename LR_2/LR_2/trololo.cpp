@@ -1,7 +1,8 @@
 #include <iostream>
 #include <memory>
 
-#include "sslclasses.h"
+#include "mytlsserver.h"
+#include "mytlsclient.h"
 #include "log.h"
 
 bool server(unsigned short port);
@@ -14,21 +15,30 @@ int main()
     std::cin >> program;
     std::cin.ignore();
 
+    SSLInitializer::initOpenSSL();
     if (program == "server")
     {
         Log::Message("PROGRAMM", "Start server!");
+        /*
         if (!server(25565))
         {
             Log::Error("PROGRAMM", "Error in server work!");
         }
+        */
+        MyTlsServer server(25565);
+        server.start();
     }
     else if (program == "client")
     {
         Log::Message("PROGRAMM", "Start client!");
+        /*
         if (!client("127.0.0.1", 25565))
         {
             Log::Error("PROGRAMM", "Error in client work!");
         }
+        */
+        MyTlsClient client("127.0.0.1", 25565);
+        client.start();
     }
     else
     {
@@ -40,7 +50,6 @@ int main()
 
 bool server(unsigned short port)
 {
-    SSLInitializer::initOpenSSL();
     SSLContext sslContext(SSLContext::SSL_Server/*, "cert.pem", "key.pem"*/);
 
     AutoSocket serverSocket = createSocketTCP();

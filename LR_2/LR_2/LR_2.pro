@@ -11,7 +11,11 @@ SOURCES += main.cpp \
     mytcpclient.cpp \
     trololo.cpp \
     tlsconnect.cpp \
-    tlsserver.cpp
+    tlsserver.cpp \
+    sslclasses.cpp \
+    mytlsserver.cpp \
+    tlsclient.cpp \
+    mytlsclient.cpp
 
 HEADERS += \
     server.h \
@@ -26,7 +30,10 @@ HEADERS += \
     mytcpclient.h \
     tlsconnect.h \
     sslclasses.h \
-    tlsserver.h
+    tlsserver.h \
+    mytlsserver.h \
+    tlsclient.h \
+    mytlsclient.h
 
 
 LIBS += -pthread
