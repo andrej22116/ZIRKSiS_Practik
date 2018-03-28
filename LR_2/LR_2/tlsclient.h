@@ -19,6 +19,7 @@ public:
 
     void start();
 
+protected:
     virtual void onConnect(TLSConnect& connect) = 0;
 };
 

@@ -24,6 +24,7 @@ public:
 
     void start();
 
+protected:
     virtual void onConnect(TLSConnect& connect) = 0;
 
     void onConnectThread(std::shared_ptr<TLSConnect> connect);

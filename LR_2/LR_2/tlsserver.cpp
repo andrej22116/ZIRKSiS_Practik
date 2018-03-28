@@ -51,11 +51,26 @@ void TlsServer::start()
         {
             std::cerr << ex.what() << std::endl;
         }
+        catch(...)
+        {
+            std::cerr << "Exception on accept!" << std::endl;
+        }
     }
 }
 
 
 void TlsServer::onConnectThread(std::shared_ptr<TLSConnect> connect)
 {
-    onConnect(*connect);
+    try
+    {
+        onConnect(*connect);
+    }
+    catch(SSLException ex)
+    {
+        std::cerr << ex.what() << std::endl;
+    }
+    catch(...)
+    {
+        std::cerr << "Exception on connect!" << std::endl;
+    }
 }

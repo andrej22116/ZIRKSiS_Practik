@@ -3,20 +3,49 @@
 
 void MyTlsClient::onConnect(TLSConnect& connect)
 {
-    Log::Message("Cleint", "Try send message to server...");
-
-    connect.connect();
-    connect << "Hello, server!";
-
-    Log::Message("Cleint", "Message was sended!");
-    Log::Message("Cleint", "Whait server message...");
-
     std::string serverMessage;
-    connect >> serverMessage;
+    int bytes = connect >> serverMessage;
 
-    Log::Message("Cleint", "Server sended: \"" + serverMessage + "\"");
+    if (serverMessage == "+")
+    {
+        Log::Message("MyTlsClient", "Connected!");
+    }
+    else if (serverMessage == "!")
+    {
+        connect << "WTF?";
+        connect >> serverMessage;
+        Log::Warning("MyTlsClient", serverMessage);
+        return;
+    }
 
+    while (true)
+    {
+        std::cout << "Enter password:> ";
+        std::string password;
+        std::getline(std::cin, password);
+        if (password == "")
+        {
+            continue;
+        }
 
-    Log::Message("Client", "Sertificate --> Subject name:" + connect.getSubjectName());
-    Log::Message("Client", "Sertificate --> Issuer name:" + connect.getIssuerName());
+        connect << password;
+        bytes = connect >> serverMessage;
+
+        if (serverMessage == "!")
+        {
+            connect << "WTF?";
+            connect >> serverMessage;
+            Log::Warning("MyTlsClient", serverMessage);
+            return;
+        }
+        else if (serverMessage == "-")
+        {
+            Log::Error("MyTlsClient", "Invalid password!");
+        }
+        else if (serverMessage == "+")
+        {
+            Log::Message("MyTlsClient", "Correct password!");
+            break;
+        }
+    }
 }

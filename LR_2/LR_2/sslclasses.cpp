@@ -163,12 +163,12 @@ int SSLConnect::send(const std::string& msg)
     {
         throw SSLException("Connect error!");
     }
+
     return dataSize;
 }
 
 std::pair<int, std::string> SSLConnect::revc()
 {
-
     const int bufSize = 64;
     std::pair<int, std::string> res = {0, ""};
     while (true)
