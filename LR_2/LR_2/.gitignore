@@ -71,3 +71,12 @@ Thumbs.db
 *.dll
 *.exe
 
+
+
+*tcp*.*
+*mytcp*.*
+*client*
+*server*
+*main.cpp*
+*connect*
+
