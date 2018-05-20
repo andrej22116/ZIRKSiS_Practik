@@ -1,0 +1,11 @@
+/home/andrej/MyLabs/ZIRKSiS/LR_4/bin/Debug/netcoreapp2.0/LR_4.deps.json
+/home/andrej/MyLabs/ZIRKSiS/LR_4/bin/Debug/netcoreapp2.0/LR_4.runtimeconfig.json
+/home/andrej/MyLabs/ZIRKSiS/LR_4/bin/Debug/netcoreapp2.0/LR_4.runtimeconfig.dev.json
+/home/andrej/MyLabs/ZIRKSiS/LR_4/bin/Debug/netcoreapp2.0/LR_4.dll
+/home/andrej/MyLabs/ZIRKSiS/LR_4/bin/Debug/netcoreapp2.0/LR_4.pdb
+/home/andrej/MyLabs/ZIRKSiS/LR_4/obj/Debug/netcoreapp2.0/LR_4.csprojAssemblyReference.cache
+/home/andrej/MyLabs/ZIRKSiS/LR_4/obj/Debug/netcoreapp2.0/LR_4.csproj.CoreCompileInputs.cache
+/home/andrej/MyLabs/ZIRKSiS/LR_4/obj/Debug/netcoreapp2.0/LR_4.AssemblyInfoInputs.cache
+/home/andrej/MyLabs/ZIRKSiS/LR_4/obj/Debug/netcoreapp2.0/LR_4.AssemblyInfo.cs
+/home/andrej/MyLabs/ZIRKSiS/LR_4/obj/Debug/netcoreapp2.0/LR_4.dll
+/home/andrej/MyLabs/ZIRKSiS/LR_4/obj/Debug/netcoreapp2.0/LR_4.pdb
